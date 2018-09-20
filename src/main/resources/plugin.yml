@@ -1,0 +1,6 @@
+name: Fern Minigames
+version: ${project.version}
+main: com.github.fernthedev.fernminigames.FernMinigames
+depend: [GameAPI]
+authors: [Fernthedev]
+description: This is a sutie of minigames made by Fern
