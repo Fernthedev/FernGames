@@ -6,19 +6,25 @@ import org.bukkit.plugin.Plugin;
 
 public class FernArenaPlugin implements ArenaPlugin {
 
+    private Plugin plugin;
+
+    public FernArenaPlugin(Plugin plugin) {
+        this.plugin = plugin;
+    }
 
     @Override
     public ArenaManager getArenas() {
-        throw new UnsupportedOperationException("Use ArenaRegistry to get ArenaManager");
+        return MainClass.getManager();
+        //throw new UnsupportedOperationException("Use ArenaRegistry to get ArenaManager");
     }
 
     @Override
     public String getName() {
-        return MainClass.getInstance().getName();
+        return plugin.getName();
     }
 
     @Override
     public Plugin getPlugin() {
-        return MainClass.getInstance();
+        return plugin;
     }
 }

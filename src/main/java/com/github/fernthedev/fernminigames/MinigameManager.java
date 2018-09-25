@@ -7,11 +7,32 @@ import org.bukkit.Location;
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MinigameManager implements ArenaManager {
     private Set<Arena> arenas;
+
+    public List<String> getArenaNames() {
+        List<String> arenasNames = new ArrayList<>();
+
+        for(Arena arena : arenas) {
+            arenasNames.add(arena.getName());
+        }
+
+        return arenasNames;
+    }
+
+    public Arena getArenaByName(String name) {
+        Map<String,Arena> arenasMap = new HashMap<>();
+
+        for(Arena arena : arenas) {
+            arenasMap.put(arena.getName(),arena);
+        }
+
+        if(!arenasMap.containsKey(name)) return null;
+
+        return arenasMap.get(name);
+    }
 
     @Override
     public Set<Arena> getArenas() {

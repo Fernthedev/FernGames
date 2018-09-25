@@ -74,6 +74,7 @@
         <dependency>
             <groupId>me.kangarko</groupId>
             <artifactId>gameapi</artifactId>
+            <version>LATEST</version>
             <scope>system</scope>
             <systemPath>${basedir}/libs/GameAPI.jar</systemPath>
         </dependency>

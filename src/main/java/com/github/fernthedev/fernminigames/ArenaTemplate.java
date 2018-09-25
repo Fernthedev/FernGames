@@ -172,6 +172,7 @@ public abstract class ArenaTemplate implements Arena {
 
     @Override
     public void onPlayerDamage(EntityDamageByEntityEvent e, Player player, Entity source, double damage) {
+
     }
 
     @Override

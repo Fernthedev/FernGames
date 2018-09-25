@@ -4,7 +4,9 @@ import me.kangarko.gameapi.*;
 import me.kangarko.gameapi.cause.JoinCause;
 import me.kangarko.gameapi.cause.LeaveCause;
 import me.kangarko.gameapi.cause.StopCause;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 import java.util.Collection;
 
@@ -51,6 +53,11 @@ public class ArenaTest extends ArenaTemplate {
     @Override
     public ArenaSnapshot getSnapshot() {
         return null;
+    }
+
+    @Override
+    public void onPlayerDamage(EntityDamageByEntityEvent e, Player player, Entity source, double damage) {
+        e.setDamage(1);
     }
 
     @Override
